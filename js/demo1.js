@@ -120,6 +120,8 @@
             // The content element ("behind" the grid)
             this.DOM.content = document.querySelector('.content');
             this.DOM.contentTitle = this.DOM.content.querySelector('.content__title');
+            this.DOM.contentText = this.DOM.content.querySelector('.content__text');
+            this.DOM.contentNecessidades = this.DOM.content.querySelector('.content__necessidades');
             // Calculate heights of both the grid wrap and the grid, and also:
             // . the difference between them (then used for the grid/mousemove translation)
             // . the number of rows/columns 
@@ -156,14 +158,19 @@
             this.DOM.items.forEach((item, pos) => {
                 // The item's title.
                 const title = item.dataset.title;
+                const text = item.dataset.text;
+                const necessidades = item.dataset.necessidades;
                 // Show the title next to the cursor.
                 item.addEventListener('mouseenter', () => cursor.setTitle(title));
                 item.addEventListener('click', () => {
                     // Position of the clicked item
                     this.pos = pos;
                     this.title = title;
+                    this.text = text;
+                    this.necessidades = necessidades;
                     // Start the effect and show the content behind
                     this.showContent();
+                    this.showContent2();
                     // Force to show the title next to the cursor (it might not update because of the grid animation - the item under the mouse can be a different one than the one the user moved the mouse to)
                     cursor.setTitle(title);
                 });
@@ -182,6 +189,8 @@
             // Set the content background image and title
             this.DOM.content.style.backgroundImage = this.DOM.items[this.pos].querySelector('.grid__item-inner').style.backgroundImage.replace(/img/g, 'img/large');
             this.DOM.contentTitle.innerHTML = this.title;
+            this.DOM.contentNecessidades.innerHTML = this.necessidades;
+            this.DOM.contentText.innerHTML = this.text;
             // Scales down and fades out the mouse toggle
             cursor.click();
             cursor.toggle();
@@ -199,7 +208,7 @@
                 this.isAnimating = false;
             });
 
-            /*
+            
             // Animates the title
             anime({
                 targets: this.DOM.contentTitle,
@@ -207,10 +216,32 @@
                 delay: 200,
                 easing: 'easeOutExpo',
                 opacity: [0,1],
-                translateY: [50,0]
+                translateY: [50,-250],
+                translateX: [50,80]
             });
-            */
+
+            anime({
+                targets: this.DOM.contentText,
+                duration: 1700,
+                delay: 200,
+                easing: 'easeOutExpo',
+                opacity: [0,1],
+                translateY: [50,0],
+                translateX: [50,0]
+            });
+
+            anime({
+                targets: this.DOM.contentNecessidades,
+                duration: 1700,
+                delay: 200,
+                easing: 'easeOutExpo',
+                opacity: [0,1],
+                translateY: [50,-100]
+            });
+
+            
         }
+        
         showGrid() {
             if ( this.isAnimating ) {
                 return false;
