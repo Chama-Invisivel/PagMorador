@@ -128,7 +128,7 @@ body {
 	position: absolute;
 	font-size: 5vw;
 	will-change: transform;
-	mix-blend-mode: overlay;
+	mix-blend-mode: hard-light;
 	text-align: center;
 	color: var(--color-title);
 	pointer-events: none;
@@ -207,6 +207,36 @@ body {
   background: #e66400;
 }
 
+.logo {
+	text-transform: uppercase;
+	color:#FF6F00 !important;
+}
+
+.cadastre {
+	border-radius: 3px;
+	background:transparent;
+	border:1px double white;
+}
+
+.cadastre:hover {
+	background: #e66400;
+}
+
+.login {
+	border-radius: 3px;
+	background: #FF6F00;
+	color: white;
+	letter-spacing: 1px;
+	cursor: pointer;
+	list-style:none;
+}
+
+.fs-4 {
+	color:#FF6F00;
+	text-transform:uppercase;
+	font-weight: bold;
+}
+
 .grid-wrap--hidden {
 	pointer-events: none;
 }
@@ -266,5 +296,12 @@ body {
 	.grid-wrap {
 		height: 100vh;
 		overflow: hidden;
+	}
+}
+@media screen and (min-width:650px) and (max-width:850px) {
+	.grid {
+		height: auto;
+		--cell-number:6;
+		--cell-size: 24.444vw;
 	}
 }

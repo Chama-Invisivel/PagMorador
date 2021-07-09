@@ -222,7 +222,7 @@
                 duration: 1700,
                 delay: 200,
                 easing: 'easeOutExpo',
-                opacity: [0,1],
+                opacity: [0,0.7],
                 translateY: [50,-270],
                 
             });
@@ -243,8 +243,8 @@
                 delay: 200,
                 easing: 'easeOutExpo',
                 opacity: [0,1],
-                translateY: [50,70],
-                translateX: [50,-550]
+                translateY: [50,80],
+                translateX: [50,-530]
             });
 
             anime({
@@ -253,7 +253,7 @@
                 delay: 200,
                 easing: 'easeOutExpo',
                 opacity: [0,1],
-                translateY: [50,185],
+                translateY: [50,170],
                 translateX: [50,-400]
             });
 
