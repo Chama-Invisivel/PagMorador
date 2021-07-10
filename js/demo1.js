@@ -214,7 +214,6 @@
                 this.DOM.el.classList.add('grid-wrap--hidden');
                 this.isAnimating = false;
             });
-
             
             // Animates the title
             anime({
@@ -223,7 +222,7 @@
                 delay: 200,
                 easing: 'easeOutExpo',
                 opacity: [0,0.7],
-                translateY: [50,-270],
+                translateY: [50,-220],
                 
             });
 
@@ -233,7 +232,7 @@
                 delay: 200,
                 easing: 'easeOutExpo',
                 opacity: [0,1],
-                translateY: [50,-110],
+                translateY: [50,-60],
                 translateX: [50,0]
             });
 
@@ -243,7 +242,7 @@
                 delay: 200,
                 easing: 'easeOutExpo',
                 opacity: [0,1],
-                translateY: [50,80],
+                translateY: [50,130],
                 translateX: [50,-530]
             });
 
@@ -253,7 +252,7 @@
                 delay: 200,
                 easing: 'easeOutExpo',
                 opacity: [0,1],
-                translateY: [50,170],
+                translateY: [50,240],
                 translateX: [50,-400]
             });
 
@@ -263,7 +262,7 @@
                 delay: 200,
                 easing: 'easeOutExpo',
                 opacity: [0,1],
-                translateY: [50,130],
+                translateY: [50,180],
                 translateX: [50,480]
             });
 
@@ -273,8 +272,72 @@
                 delay: 200,
                 easing: 'easeOutExpo',
                 opacity: [0,1],
-                translateY: [50,130],
+                translateY: [50,550],
+                translateX: [480,510]
             });
+
+            const celular = window.matchMedia("(orientation: portrait)");
+
+            if (celular.matches){
+                anime({
+                    targets: this.DOM.contentTitle,
+                    duration: 1700,
+                    delay: 200,
+                    easing: 'easeOutExpo',
+                    opacity: [0,0.7],
+                    translateY: [50,-305],
+                    
+                });
+                anime({
+                    targets: this.DOM.contentText,
+                    duration: 1700,
+                    delay: 200,
+                    easing: 'easeOutExpo',
+                    opacity: [0,1],
+                    translateY: [50,-90],
+                    translateX: [50,0]
+                });
+    
+                anime({
+                    targets: this.DOM.contentNecessidades,
+                    duration: 1700,
+                    delay: 200,
+                    easing: 'easeOutExpo',
+                    opacity: [0,1],
+                    translateY: [50,150],
+                    translateX: [50,-105]
+                });
+    
+                anime({
+                    targets: this.DOM.contentDetalhes,
+                    duration: 1700,
+                    delay: 200,
+                    easing: 'easeOutExpo',
+                    opacity: [0,1],
+                    translateY: [50,140],
+                    translateX: [50, 63]
+                });
+    
+                anime({
+                    targets: this.DOM.contentDoar,
+                    duration: 1700,
+                    delay: 200,
+                    easing: 'easeOutExpo',
+                    opacity: [0,1],
+                    translateY: [50,241],
+                    translateX: [50,103]
+                });
+    
+                anime({
+                    targets: this.DOM.contentMapa,
+                    duration: 1700,
+                    delay: 200,
+                    easing: 'easeOutExpo',
+                    opacity: [0,1],
+                    translateY: [50,360],
+                    translateX: [480,40]
+                });
+            }
 
         }
         

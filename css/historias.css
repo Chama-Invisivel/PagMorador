@@ -141,7 +141,7 @@ body {
 
 .content__text {
 	position:absolute;
-	max-width:1200px;
+	max-width:94%;
 	font-size: 1.5vw;
 	will-change: transform;
 	mix-blend-mode:hard-light;
@@ -172,7 +172,7 @@ body {
 
 .content__detalhes {
 	position:absolute;
-	max-width:400px;
+	max-width:32%;
 	font-size: 1.5vw;
 	will-change: transform;
 	mix-blend-mode:hard-light;
@@ -187,8 +187,21 @@ body {
 }
 
 .content__mapa {
-	position:absolute;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	padding-top: 75%; 
 }
+
+.responsive-iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 21.5%;
+	height: 21.5%;
+  }
 
 .content__button {
 	position:absolute;
@@ -255,8 +268,35 @@ body {
 	.grid {
 		height: auto;
 		--cell-number: 6;
-		--cell-size: 47.777vw;
+		--cell-size: 50vw;
 	}
+	.content__title {
+	    font-size: 12vw;
+    }
+
+    .content__text {
+    	max-width:80vw;
+    	font-size:3.5vw
+    }
+
+	.content__necessidades {
+    	font-size:4vw;
+    }
+
+	.content__detalhes {
+    	font-size:3.5vw;
+    	text-align:justify;
+    	max-width:45%;
+    }
+
+	.content__button {
+    	font-size:4.3vw
+    }
+
+    .responsive-iframe {
+    	width:45%;
+    	height:45%;
+    }
 }
 
 .grid__item {
@@ -302,6 +342,6 @@ body {
 	.grid {
 		height: auto;
 		--cell-number:6;
-		--cell-size: 24.444vw;
+		--cell-size: 24.333vw;
 	}
 }
